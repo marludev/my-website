@@ -3,8 +3,8 @@ import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 
 const Header = ({ siteTitle }) => {
-  const hola = 123
-  retunr(
+
+  return(
     <header className="mb-10 bg-blue-500">
       <div
         style={{

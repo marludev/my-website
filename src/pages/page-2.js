@@ -1,12 +1,10 @@
-import { Link } from 'gatsby'
-// eslint-disable-next-line no-use-before-define
 import React from 'react'
+import { Link } from 'gatsby'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 
 const SecondPage = () => {
-  const hola = 123
   return (
     <Layout>
       <SEO title="Page two" />
