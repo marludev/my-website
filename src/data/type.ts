@@ -11,5 +11,5 @@ interface IquestionItem {
 
 export interface IDataCardsTechnology {
   title: string
-  technology: 'react' | 'node' | 'graphql' | 'wordpress' | 'project' | 'money'
+  icon: 'react' | 'node' | 'graphql' | 'wordpress' | 'project' | 'money'
 }
