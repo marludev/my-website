@@ -30,6 +30,7 @@ const Form = () => {
         onSubmit={(values, { setSubmitting }) => {
           setTimeout(() => {
             setSubmitting(false)
+            // TODO delete log
             console.log(values)
           }, 3000)
         }}

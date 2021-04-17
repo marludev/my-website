@@ -1,6 +1,6 @@
 export interface IProps {
   title: string
-  icon: 'react' | 'node' | 'graphql' | 'wordpress' | 'project'
+  icon: 'react' | 'node' | 'graphql' | 'wordpress' | 'project' | 'money'
   questions: Array<questions>
 }
 
