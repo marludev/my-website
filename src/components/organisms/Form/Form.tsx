@@ -53,7 +53,7 @@ const Form = () => {
               value={values.firstName}
               label="Nombre"
               error={errors.firstName && touched.firstName && errors.firstName}
-              className="w-full py-4 lg:px-4 lg:pl-0 md:w-1/2"
+              className="w-full py-4 lg:px-4 lg:pl-0 lg:w-1/2"
             />
             <TextField
               name="lastName"
@@ -63,7 +63,7 @@ const Form = () => {
               value={values.lastName}
               label="Apellido"
               error={errors.lastName && touched.lastName && errors.lastName}
-              className="w-full py-4 lg:px-4 lg:pr-0 md:w-1/2"
+              className="w-full py-4 lg:px-4 lg:pr-0 lg:w-1/2"
             />
             <TextField
               name="email"
@@ -73,7 +73,7 @@ const Form = () => {
               value={values.email}
               label="Correo"
               error={errors.email && touched.email && errors.email}
-              className="w-full py-4 lg:px-4 lg:pl-0 md:w-1/2"
+              className="w-full py-4 lg:px-4 lg:pl-0 lg:w-1/2"
             />
             <TextField
               name="message"
