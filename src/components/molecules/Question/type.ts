@@ -1,6 +1,7 @@
+import { icons } from '@/data/type'
 export interface IProps {
   title: string
-  icon: 'react' | 'node' | 'graphql' | 'wordpress' | 'project' | 'money'
+  icon: icons
   questions: Array<questions>
 }
 

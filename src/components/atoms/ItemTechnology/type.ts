@@ -1,6 +1,8 @@
+import { icons } from '@/data/type'
+
 export interface IProps {
   dataCard: {
-    icon: 'react' | 'node' | 'graphql' | 'wordpress' | 'project' | 'money'
+    icon: icons
     title: string
   }
 }

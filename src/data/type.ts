@@ -1,6 +1,6 @@
 export interface IDataQuestions {
   title: string
-  icon: 'react' | 'node' | 'graphql' | 'wordpress' | 'project' | 'money'
+  icon: icons
   questions: Array<IquestionItem>
 }
 
@@ -11,5 +11,12 @@ interface IquestionItem {
 
 export interface IDataCardsTechnology {
   title: string
-  icon: 'react' | 'node' | 'graphql' | 'wordpress' | 'project' | 'money'
+  icon: icons
 }
+export type icons =
+  | 'react'
+  | 'node'
+  | 'graphql'
+  | 'wordpress'
+  | 'project'
+  | 'money'

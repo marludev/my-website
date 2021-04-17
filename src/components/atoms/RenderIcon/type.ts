@@ -1,10 +1,11 @@
 import { IconType } from 'react-icons'
+import { icons } from '@/data/type'
 
 export interface IObjectTechnologys {
   [index: string]: IconType
 }
 export interface IProps {
-  icon: 'react' | 'node' | 'graphql' | 'wordpress' | 'project' | 'money'
+  icon: icons
   className: string
   size: string
 }
