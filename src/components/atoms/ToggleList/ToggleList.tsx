@@ -9,13 +9,13 @@ const ToggleList: React.FC<IProps> = ({ question, response }) => {
   const height = containerToggle?.current?.scrollHeight
 
   return (
-    <div className="w-full">
+    <div className="w-full my-6">
       <div className="pl-10">
         <div
           className="flex items-center cursor-pointer select-none"
           onClick={() => setToggle(!toggle)}
         >
-          <h4 className="mt-2 mb-4 text-xl">{question}</h4>
+          <h4 className="w-full mt-2 mb-4 text-xl">{question}</h4>
           <BsArrowUpShort
             size="50"
             className={`transform text-custom-primary transition-all duration-300 ml-auto ${

@@ -6,7 +6,7 @@ const Question: React.FC<IProps> = ({ title, icon, questions }) => {
   console.log(questions)
 
   return (
-    <div className="my-6">
+    <div className="w-full my-6 overflow-hidden md:w-1/2">
       <TitleWithIcon icon={icon} title={title} />
       {questions.map(question => (
         <React.Fragment key={question.question}>
