@@ -1,6 +1,6 @@
 import React from 'react'
 import { GrReactjs, GrNode, GrGraphQl, GrWordpress } from 'react-icons/gr'
-import { AiOutlineFundProjectionScreen } from 'react-icons/ai'
+import { HiOutlineTag, HiOutlineCode } from 'react-icons/hi'
 import { IObjectTechnologys, IProps } from './type'
 
 const icons: IObjectTechnologys = {
@@ -8,7 +8,8 @@ const icons: IObjectTechnologys = {
   node: GrNode,
   graphql: GrGraphQl,
   wordpress: GrWordpress,
-  project: AiOutlineFundProjectionScreen,
+  project: HiOutlineCode,
+  money: HiOutlineTag,
 }
 
 const RenderIcon: React.FC<IProps> = ({ icon, className, size }) => {

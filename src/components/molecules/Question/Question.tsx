@@ -1,10 +1,8 @@
 import React from 'react'
-import { ToggleList } from '@/components/atoms'
-import { TitleWithIcon } from '@/components/atoms'
+import { ToggleList, TitleWithIcon } from '@/components/atoms'
 import { IProps } from './type'
-const Question: React.FC<IProps> = ({ title, icon, questions }) => {
-  console.log(questions)
 
+const Question: React.FC<IProps> = ({ title, icon, questions }) => {
   return (
     <div className="w-full my-6 overflow-hidden md:w-1/2">
       <TitleWithIcon icon={icon} title={title} />

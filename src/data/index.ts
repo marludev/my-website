@@ -49,7 +49,7 @@ export const dataQuestions: Array<IDataQuestions> = [
   },
   {
     title: 'Proceso de pago',
-    icon: 'project',
+    icon: 'money',
     questions: [
       {
         question: '¿Mediante que plataforma te puedo pagar?',

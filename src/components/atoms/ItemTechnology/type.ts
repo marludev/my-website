@@ -1,6 +1,6 @@
 export interface IProps {
   dataCard: {
-    technology: 'react' | 'node' | 'graphql' | 'wordpress' | 'project'
+    technology: 'react' | 'node' | 'graphql' | 'wordpress'
     title: string
   }
 }
