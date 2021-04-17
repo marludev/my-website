@@ -2,7 +2,7 @@ import React from 'react'
 import { BsArrowReturnRight } from 'react-icons/bs'
 import Image from 'next/image'
 import { NavLink, Title } from '@/components/atoms'
-
+import { summaryAboutMe } from '@/data'
 const Banner = () => {
   const dataTitle = { title: 'Un poco sobre mi', subTitle: 'Introducción' }
   return (
@@ -30,11 +30,7 @@ const Banner = () => {
           <div className="flex items-center md:w-1/2">
             <div className="max-w-xl">
               <Title dataTitle={dataTitle} />
-              <p className="text-xl">
-                Desde que tengo uso de razón me ha llamado la atención las
-                computadoras, el hardware, software y como ambos se complementan
-                para trabajar al unísono.
-              </p>
+              <p className="text-xl">{summaryAboutMe}</p>
               <NavLink
                 href="/sobre-mi"
                 className="text-lg border-b-2 border-transparent text-custom-primary hover:border-custom-primary"

@@ -64,3 +64,25 @@ export const dataQuestions: Array<IDataQuestions> = [
     ],
   },
 ]
+
+export const aboutMe = [
+  [
+    1,
+    'Como seguía diciendo, Desde muy joven me ha llamado la atención las computadoras, el hardware, software y como ambos se complementan para trabajar al unísono.',
+  ],
+  [
+    2,
+    'Muchos años atrás cuando aun existía Messenger de Microsoft, comencé experimentando con una vieja pc la cual dañe un par de veces (tal vez un poco mas que un par). experimentaba haciendo pequeños scripts en Windows. allí comencé a interactuar con la CMD.',
+  ],
+  [
+    3,
+    'En la secundaria, me llegue a destacar bastante en computación. allí me enseñaron un poco de protocolos http, diagramas de flujo, HTML y CSS.',
+  ],
+  [
+    4,
+    'Poco tiempo después de graduarme con la incertidumbre de no saber que estudiar, comencé a ver algunos videos que me parecían interesantes de programación, recuerdo que una persona me dio ese empujón para comenzar a estudiar programación y gracias a varios compañeros y esa persona hoy en día he incursionado como desarrollador web y móvil, trabajando tanto de backend como en frontend.',
+  ],
+]
+
+export const summaryAboutMe =
+  'Desde muy joven me ha llamado la atención las computadoras, el hardware, software y como ambos se complementan para trabajar al unísono.'

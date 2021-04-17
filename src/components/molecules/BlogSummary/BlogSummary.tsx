@@ -29,8 +29,7 @@ const BlogSummary = () => {
     },
   ]
   const dataTitle = {
-    title:
-      ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, rem!',
+    title: 'Últimos artículos subidos',
     subTitle: 'blog',
   }
 
