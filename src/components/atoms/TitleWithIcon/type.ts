@@ -1,4 +1,4 @@
 export interface IProps {
   title: string
-  icon: 'project' | 'money'
+  icon: 'react' | 'node' | 'graphql' | 'wordpress' | 'project' | 'money'
 }
