@@ -1,10 +1,10 @@
 import React from 'react'
 import { NextPage } from 'next'
-
+import { BlogSummary } from '@/components/molecules'
 const Blog: NextPage = () => {
   return (
     <div className="container">
-      <h1 className="text-9xl">desde Blog</h1>
+      <BlogSummary />
     </div>
   )
 }
