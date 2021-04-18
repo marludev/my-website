@@ -5,7 +5,7 @@ import { Technology, BlogSummary, Banner } from '@/components/molecules'
 const Home: NextPage = () => {
   return (
     <>
-      <Banner />
+      <Banner title="Luis Martinez" />
       <div className="container">
         <Technology />
         <BlogSummary />
