@@ -30,6 +30,7 @@ const Textarea: React.FC<IProps> = ({
   return (
     <div className="relative">
       <textarea
+        id={name}
         name={name}
         onChange={onChange}
         onFocus={handleFocus}
@@ -43,7 +44,9 @@ const Textarea: React.FC<IProps> = ({
         }`}
       />
 
-      <InputLabel active={active || !!value}>{label}</InputLabel>
+      <InputLabel name={name} active={active || !!value}>
+        {label}
+      </InputLabel>
     </div>
   )
 }

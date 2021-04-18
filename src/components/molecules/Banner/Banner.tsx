@@ -14,6 +14,7 @@ const Banner = () => {
           objectFit="cover"
           objectPosition="top"
           className="z-0"
+          alt="principal image"
         />
         <div className="absolute inset-0 bg-opacity-70 bg-custom-secondary"></div>
       </div>

@@ -31,6 +31,7 @@ const Input: React.FC<IProps> = ({
   return (
     <div className="relative">
       <input
+        id={name}
         name={name}
         type={type}
         onChange={onChange}
@@ -44,7 +45,9 @@ const Input: React.FC<IProps> = ({
             : 'focus:ring-custom-primary hover:ring-custom-primary'
         }`}
       />
-      <InputLabel active={active || !!value}>{label}</InputLabel>
+      <InputLabel name={name} active={active || !!value}>
+        {label}
+      </InputLabel>
     </div>
   )
 }

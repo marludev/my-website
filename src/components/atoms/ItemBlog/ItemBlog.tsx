@@ -15,6 +15,7 @@ const ItemBlog: React.FC<IProps> = ({
             layout="fill"
             objectFit="cover"
             objectPosition="center"
+            alt="image article"
           />
         </div>
         <div className="flex flex-wrap py-4 md:p-6 md:w-7/12">

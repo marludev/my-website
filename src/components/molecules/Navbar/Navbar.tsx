@@ -128,6 +128,7 @@ const Navbar = () => {
       <button
         type="button"
         className="fixed z-50 rounded-full shadow-2xl w-14 h-14 bottom-10 right-10 bg-custom-primary focus:outline-none lg:hidden"
+        aria-label="Open/Close Menu"
         onClick={() => setToggle(!toggle)}
       >
         {toggle ? (
