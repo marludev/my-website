@@ -1,6 +1,5 @@
 export * from './Banner'
 export * from './Layout'
-export * from './Banner'
 export * from './BlogSummary'
 export * from './Footer'
 export * from './Header'
