@@ -1,6 +1,6 @@
 import React from 'react'
 export interface IProps {
-  title: string
+  title?: string
   isTemplate?: boolean
   description?: string
   shareImage?: string
