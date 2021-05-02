@@ -8,7 +8,7 @@ import { IProps } from './type'
 const Banner: React.FC<IProps> = ({
   isHome = true,
   title,
-  image = '/header.png',
+  image = '/header.jpg',
 }) => {
   const dataTitle = { title: 'Un poco sobre mi', subTitle: 'Introducción' }
   return (
