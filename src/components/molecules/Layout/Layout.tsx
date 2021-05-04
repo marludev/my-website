@@ -15,7 +15,7 @@ const Layout: React.FC<IProps> = ({ children }) => {
         title="Luis Martinez -  Fullstack Developer"
         openGraph={{
           type: 'website',
-          locale: 'es',
+          locale: 'es_VE',
           url: `${baseURL}${router.asPath}`,
           site_name: 'Luis Martinez -  Fullstack Developer',
           images: [{ url: `${baseURL}banner.jpg`, width: 1200, height: 628 }],
