@@ -11,6 +11,7 @@ const Input: React.FC<IProps> = ({
   error = false,
   type,
   name,
+  autoComplete,
 }) => {
   const [active, setActive] = React.useState(false)
 
@@ -31,6 +32,7 @@ const Input: React.FC<IProps> = ({
   return (
     <div className="relative">
       <input
+        autoComplete={autoComplete}
         id={name}
         name={name}
         type={type}

@@ -51,6 +51,7 @@ const Form = () => {
               label="Nombre"
               error={errors.name && touched.name && errors.name}
               className="w-full py-4 lg:px-4 lg:pl-0 lg:w-1/2"
+              autoComplete="name"
             />
             <TextField
               name="email"
@@ -61,6 +62,7 @@ const Form = () => {
               label="Correo"
               error={errors.email && touched.email && errors.email}
               className="w-full py-4 lg:px-4 lg:pl-0 lg:w-1/2"
+              autoComplete="email"
             />
             <TextField
               name="message"
