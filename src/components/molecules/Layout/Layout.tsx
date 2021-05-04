@@ -10,15 +10,15 @@ const Layout: React.FC<IProps> = ({ children }) => {
   return (
     <React.Fragment>
       <DefaultSeo
-        canonical={`${baseURL}/${router.asPath}`}
+        canonical={`${baseURL}${router.asPath}`}
         description="Luis Martinez Desarrollador Fullstack en javascript, con experiencia trabajando con React, React Native y Nodejs"
         title="Luis Martinez -  Fullstack Developer"
         openGraph={{
           type: 'website',
           locale: 'es',
-          url: `${baseURL}/${router.asPath}`,
+          url: `${baseURL}${router.asPath}`,
           site_name: 'Luis Martinez -  Fullstack Developer',
-          images: [{ url: `${baseURL}/banner.jpg` }],
+          images: [{ url: `${baseURL}banner.jpg`, width: 1200, height: 628 }],
           title: 'Luis Martinez -  Fullstack Developer',
         }}
         twitter={{

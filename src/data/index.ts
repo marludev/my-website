@@ -87,4 +87,4 @@ export const aboutMe = [
 export const summaryAboutMe =
   'Desde muy joven me ha llamado la atención las computadoras, el hardware, software y como ambos se complementan para trabajar al unísono.'
 
-export const baseURL = 'https://marludev.com'
+export const baseURL = 'https://marludev.com/'
