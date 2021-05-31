@@ -5,10 +5,7 @@ import { Banner } from '@/components/molecules'
 const PostPage: NextPage = () => {
   return (
     <>
-      <Banner
-        title="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias, iusto?"
-        isHome={false}
-      />
+      <Banner />
       <div className="container p-10 transform -translate-y-20 bg-custom-input box-shadow">
         <h1>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam,
