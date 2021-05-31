@@ -1,12 +1,18 @@
 import React from 'react'
 import { NextPage } from 'next'
-import { Banner } from '@/components/molecules'
-
+import { CodeBlock } from '@/components/organisms'
 const PostPage: NextPage = () => {
+  const exampleCode = `
+(function someDemo() {
+  var test = "Hello World!";
+  console.log(test);
+})();
+
+return () => <App />;
+`.trim()
   return (
     <>
-      <Banner />
-      <div className="container p-10 transform -translate-y-20 bg-custom-input box-shadow">
+      <div className="max-w-5xl p-10 mx-auto bg-custom-tertiary box-shadow">
         <h1>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam,
           blanditiis!
@@ -19,6 +25,7 @@ const PostPage: NextPage = () => {
           cupiditate, ipsum doloremque tempora veritatis eum, voluptate nobis.
           Enim atque beatae aperiam optio tenetur voluptates.
         </p>
+        <CodeBlock className="language-jsx" code={exampleCode} />
       </div>
     </>
   )

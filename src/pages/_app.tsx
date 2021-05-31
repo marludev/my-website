@@ -3,7 +3,7 @@ import { AppProps } from 'next/app'
 import { Layout } from '@/components/molecules'
 import 'tailwindcss/tailwind.css'
 
-const MyApp = ({ Component, pageProps }: AppProps) => {
+const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (
     <Layout>
       <Component {...pageProps} />
