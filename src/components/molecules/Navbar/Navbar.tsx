@@ -3,18 +3,14 @@ import { NavLink } from '@/components/atoms'
 import { FaBars } from 'react-icons/fa'
 import { AiOutlineClose } from 'react-icons/ai'
 import { useRouter } from 'next/router'
+import { routes } from '@/data'
+
 const Navbar = () => {
   const [toggle, setToggle] = React.useState(false)
   const router = useRouter()
-
   let isAbsolute = null
   const path = router.pathname
-
   if (path === '/') isAbsolute = true
-  else if (path === '/blog') {
-    const getPathBlog = path.split('/')
-    if (getPathBlog.length >= 3) isAbsolute = true
-  }
 
   return (
     <nav
@@ -23,105 +19,33 @@ const Navbar = () => {
       }`}
     >
       <ul className="container flex-row justify-end hidden lg:flex">
-        <li className="mx-4">
-          <NavLink
-            className="px-4 pb-2 text-lg transition duration-300 border-b-2 border-transparent hover:border-custom-primary"
-            activateClassName="border-b-2 border-custom-primary"
-            href="/"
-          >
-            Inicio
-          </NavLink>
-        </li>
-        <li className="mx-4">
-          <NavLink
-            className="px-4 pb-2 text-lg transition duration-300 border-b-2 border-transparent hover:border-custom-primary"
-            activateClassName="border-b-2 border-custom-primary"
-            href="/sobre-mi"
-          >
-            Sobre mi
-          </NavLink>
-        </li>
-        <li className="mx-4">
-          <NavLink
-            className="px-4 pb-2 text-lg transition duration-300 border-b-2 border-transparent hover:border-custom-primary"
-            activateClassName="border-b-2 border-custom-primary"
-            href="/portafolio"
-          >
-            Portafolio
-          </NavLink>
-        </li>
-        <li className="mx-4">
-          <NavLink
-            className="px-4 pb-2 text-lg transition duration-300 border-b-2 border-transparent hover:border-custom-primary"
-            activateClassName="border-b-2 border-custom-primary"
-            href="/blog"
-          >
-            Blog
-          </NavLink>
-        </li>
-        <li className="mx-4">
-          <NavLink
-            className="px-4 pb-2 text-lg transition duration-300 border-b-2 border-transparent hover:border-custom-primary"
-            activateClassName="border-b-2 border-custom-primary"
-            href="/contacto"
-          >
-            Contacto
-          </NavLink>
-        </li>
+        {routes.map(route => (
+          <li className="mx-4" key={route.url}>
+            <NavLink
+              className="px-4 pb-2 text-lg transition duration-300 border-b-2 border-transparent hover:border-custom-primary"
+              activateClassName="border-b-2 border-custom-primary"
+              href={route.url}
+            >
+              {route.name}
+            </NavLink>
+          </li>
+        ))}
       </ul>
 
       {toggle && (
         <ul className="fixed inset-y-0 right-0 z-20 w-full max-w-xs p-6 sm:max-w-md bg-custom-secondary lg:hidden">
-          <li className="mx-4 my-8">
-            <NavLink
-              className="pb-1 text-2xl transition duration-300 border-b-2 border-transparent hover:border-custom-primary"
-              activateClassName="border-b-2 border-custom-primary"
-              href="/"
-              onClick={() => setToggle(false)}
-            >
-              Inicio
-            </NavLink>
-          </li>
-          <li className="mx-4 my-8">
-            <NavLink
-              className="pb-1 text-2xl transition duration-300 border-b-2 border-transparent hover:border-custom-primary"
-              activateClassName="border-b-2 border-custom-primary"
-              href="/sobre-mi"
-              onClick={() => setToggle(false)}
-            >
-              Sobre mi
-            </NavLink>
-          </li>
-          <li className="mx-4 my-8">
-            <NavLink
-              className="pb-1 text-2xl transition duration-300 border-b-2 border-transparent hover:border-custom-primary"
-              activateClassName="border-b-2 border-custom-primary"
-              href="/portafolio"
-              onClick={() => setToggle(false)}
-            >
-              Portafolio
-            </NavLink>
-          </li>
-          <li className="mx-4 my-8">
-            <NavLink
-              className="pb-1 text-2xl transition duration-300 border-b-2 border-transparent hover:border-custom-primary"
-              activateClassName="border-b-2 border-custom-primary"
-              href="/blog"
-              onClick={() => setToggle(false)}
-            >
-              Blog
-            </NavLink>
-          </li>
-          <li className="mx-4 my-8">
-            <NavLink
-              className="pb-1 text-2xl transition duration-300 border-b-2 border-transparent hover:border-custom-primary"
-              activateClassName="border-b-2 border-custom-primary"
-              href="/contacto"
-              onClick={() => setToggle(false)}
-            >
-              Contacto
-            </NavLink>
-          </li>
+          {routes.map(route => (
+            <li className="mx-4 my-8" key={route.url}>
+              <NavLink
+                className="pb-1 text-2xl transition duration-300 border-b-2 border-transparent hover:border-custom-primary"
+                activateClassName="border-b-2 border-custom-primary"
+                href={route.url}
+                onClick={() => setToggle(false)}
+              >
+                {route.name}
+              </NavLink>
+            </li>
+          ))}
         </ul>
       )}
 

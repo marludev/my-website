@@ -84,6 +84,13 @@ export const aboutMe = [
   ],
 ]
 
+export const routes = [
+  { url: '/', name: 'Inicio' },
+  { url: '/ Sobre-mi', name: ' Sobre mi' },
+  { url: '/blog', name: 'Blog' },
+  { url: '/contacto', name: 'Contacto' },
+]
+
 export const summaryAboutMe =
   'Desde muy joven me ha llamado la atención las computadoras, el hardware, software y como ambos se complementan para trabajar al unísono.'
 
