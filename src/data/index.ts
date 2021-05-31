@@ -1,13 +1,13 @@
 import { IDataQuestions, IDataCardsTechnology } from './type'
 
-export const dataCardsTechnology: Array<IDataCardsTechnology> = [
+export const dataCardsTechnology: IDataCardsTechnology[] = [
   { title: 'React', icon: 'react' },
   { title: 'Node', icon: 'node' },
   { title: 'Graphql', icon: 'graphql' },
   { title: 'Wordpress', icon: 'wordpress' },
 ]
 
-export const dataQuestions: Array<IDataQuestions> = [
+export const dataQuestions: IDataQuestions[] = [
   {
     title: 'Desarrollo del proyecto',
     icon: 'project',

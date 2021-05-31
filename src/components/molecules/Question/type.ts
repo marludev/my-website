@@ -1,8 +1,8 @@
-import { icons } from '@/data/type'
+import { IconsName } from '@/data/type'
 export interface IProps {
   title: string
-  icon: icons
-  questions: Array<questions>
+  icon: IconsName
+  questions: questions[]
 }
 
 interface questions {

@@ -1,7 +1,7 @@
 export interface IDataQuestions {
   title: string
-  icon: icons
-  questions: Array<IquestionItem>
+  icon: IconsName
+  questions: IquestionItem[]
 }
 
 interface IquestionItem {
@@ -11,9 +11,9 @@ interface IquestionItem {
 
 export interface IDataCardsTechnology {
   title: string
-  icon: icons
+  icon: IconsName
 }
-export type icons =
+export type IconsName =
   | 'react'
   | 'node'
   | 'graphql'

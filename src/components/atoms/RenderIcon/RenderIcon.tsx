@@ -1,9 +1,11 @@
 import React from 'react'
 import { GrReactjs, GrNode, GrGraphQl, GrWordpress } from 'react-icons/gr'
 import { HiOutlineTag, HiOutlineCode } from 'react-icons/hi'
-import { IObjectTechnologys, IProps } from './type'
+import { IconsName } from '@/data/type'
+import { IconType } from 'react-icons'
+import { IProps } from './type'
 
-const icons: IObjectTechnologys = {
+const icons: Record<IconsName, IconType> = {
   react: GrReactjs,
   node: GrNode,
   graphql: GrGraphQl,

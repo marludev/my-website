@@ -1,11 +1,7 @@
-import { IconType } from 'react-icons'
-import { icons } from '@/data/type'
+import { IconsName } from '@/data/type'
 
-export interface IObjectTechnologys {
-  [index: string]: IconType
-}
 export interface IProps {
-  icon: icons
+  icon: IconsName
   className: string
   size: string
 }
