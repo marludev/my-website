@@ -4,6 +4,7 @@ export type post = {
   _id: string
   title: string
   slug: string
+  summary: string
   published_at: string
   createdAt: string
   updatedAt: string

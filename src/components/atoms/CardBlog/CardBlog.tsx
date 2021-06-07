@@ -5,7 +5,7 @@ import { BsArrowRightShort } from 'react-icons/bs'
 import { IProps } from './type'
 
 const CardBlog: React.FC<IProps> = ({ post }) => {
-  const { title, banner, published_at, slug, contentSections } = post
+  const { title, banner, published_at, slug, summary } = post
   return (
     <NextLink href={`/blog/${slug}`}>
       <a className="p-4 transition duration-300 rounded-lg hover:bg-custom-tertiary">
@@ -21,12 +21,7 @@ const CardBlog: React.FC<IProps> = ({ post }) => {
         <div className="mt-4">
           <small className="mb-2 text-gray-500">{published_at}</small>
           <h3 className="mb-1 text-2xl">{title}</h3>
-          {contentSections.map(section => (
-            <p className="text-sm text-gray-300" key={section._id}>
-              {section.__component === 'section.content' &&
-                section.content.substr(0, 150)}
-            </p>
-          ))}
+          <p className="text-sm text-gray-300">{summary}</p>
           <BsArrowRightShort
             size="30"
             className="float-right ml-auto text-custom-primary"
