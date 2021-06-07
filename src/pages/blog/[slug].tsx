@@ -1,33 +1,50 @@
 import React from 'react'
-import { NextPage } from 'next'
-import { CodeBlock } from '@/components/organisms'
-const PostPage: NextPage = () => {
-  const exampleCode = `
-(function someDemo() {
-  var test = "Hello World!";
-  console.log(test);
-})();
+import Image from 'next/image'
+import { GetStaticProps, GetStaticPaths, NextPage } from 'next'
+import { fetchAPI } from '@/utils/api'
+import { post } from '@/types'
+import { Section } from '@/components/molecules'
 
-return () => <App />;
-`.trim()
+type IProps = { post: post }
+const PostPage: NextPage<IProps> = ({ post }) => {
   return (
     <>
+      <div className="mx-auto max-w-7xl">
+        <h1 className="text-5xl">{post.title}</h1>
+        <figure className="relative w-full h-96">
+          <Image
+            src={post.banner.url}
+            layout="fill"
+            objectFit="cover"
+            objectPosition="center"
+            alt="image article"
+          />
+        </figure>
+      </div>
       <div className="max-w-5xl p-10 mx-auto bg-custom-tertiary box-shadow">
-        <h1>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam,
-          blanditiis!
-        </h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic
-          laboriosam dolorum saepe deleniti quisquam id repellat quod! Illo
-          adipisci ut omnis excepturi molestiae rerum alias harum in nemo
-          quisquam voluptatibus nesciunt commodi sequi, natus aliquam
-          cupiditate, ipsum doloremque tempora veritatis eum, voluptate nobis.
-          Enim atque beatae aperiam optio tenetur voluptates.
-        </p>
-        <CodeBlock className="language-jsx" code={exampleCode} />
+        {post.contentSections.map(section => (
+          <Section sectionData={section} key={section.id} />
+        ))}
       </div>
     </>
   )
 }
 export default PostPage
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const allPosts: post[] = await fetchAPI('/posts')
+  return {
+    paths: allPosts?.map(post => `/blog/${post.slug}`) || [],
+    fallback: false,
+  }
+}
+
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const post: post[] = await fetchAPI(`/posts?slug=${params?.slug}`)
+  return {
+    props: {
+      post: post[0],
+    },
+    revalidate: 600,
+  }
+}

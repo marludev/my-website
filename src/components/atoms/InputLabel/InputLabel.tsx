@@ -8,6 +8,8 @@ const InputLabel: React.FC<IProps> = ({ active, children, name }) => {
       className={`absolute left-4 transform transition-all ease-in pointer-events-none -translate-y-1/2 px-2 ${
         active
           ? 'top-0 text-xs bg-custom-input left-2'
+          : name === 'message'
+          ? 'text-base bg-transparent top-1/4 left-4'
           : 'text-base bg-transparent top-1/2 left-4'
       }`}
     >

@@ -1,5 +1,5 @@
 module.exports = {
   images: {
-    domains: ['picsum.photos'],
+    domains: ['static.platzi.com', 'res.cloudinary.com'],
   },
 }

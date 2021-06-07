@@ -31,7 +31,7 @@ const Banner: React.FC = () => {
                   frontend developer
                 </span>
               </h1>
-              <span className="inline-block w-1/5 h-1.5 bg-custom-primary" />
+              <span className="inline-block w-1/5 h-1.5 bg-custom-primary rounded-lg" />
 
               <p className="text-xl">{summaryAboutMe}</p>
               <NavLink

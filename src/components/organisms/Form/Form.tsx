@@ -16,10 +16,9 @@ const Form = () => {
       .required('Campo obligatorio'),
     email: Yup.string().email('Correo invalido').required('Campo obligatorio'),
   })
-  const dataTitle = { title: 'Contactame' }
   return (
-    <section className="p-6 py-16 lg:py-32 lg:p-0">
-      <Title dataTitle={dataTitle} />
+    <section className="p-6 py-16 lg:p-0">
+      <Title title="Contactame" />
       <Formik
         initialValues={{ name: '', email: '', message: '' }}
         validationSchema={validationSchema}
@@ -41,7 +40,10 @@ const Form = () => {
           isSubmitting,
           /* and other goodies */
         }) => (
-          <form className="flex flex-wrap" onSubmit={handleSubmit}>
+          <form
+            className="flex flex-wrap max-w-6xl mx-auto"
+            onSubmit={handleSubmit}
+          >
             <TextField
               name="name"
               onBlur={handleBlur}
@@ -61,7 +63,7 @@ const Form = () => {
               value={values.email}
               label="Correo"
               error={errors.email && touched.email && errors.email}
-              className="w-full py-4 lg:px-4 lg:pl-0 lg:w-1/2"
+              className="w-full py-4 lg:px-4 lg:pr-0 lg:w-1/2"
               autoComplete="email"
             />
             <TextField
@@ -75,7 +77,7 @@ const Form = () => {
             />
             <div className="flex justify-end w-full">
               <button
-                className="block p-4 my-4 text-lg font-semibold text-black transition-all duration-300 shadow-xl sm:inline-block bg-opacity-90 bg-custom-primary hover:bg-opacity-100"
+                className="block p-4 my-4 text-lg font-semibold text-black transition-all duration-300 rounded-lg shadow-xl sm:inline-block bg-opacity-90 bg-custom-primary hover:bg-opacity-100"
                 type="submit"
                 disabled={isSubmitting}
               >

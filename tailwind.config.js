@@ -17,8 +17,12 @@ module.exports = {
           secondary: '#01002F',
           tertiary: '#100F32',
           input: '#30305B',
+          code: '#2D2A55',
         },
         dark: '#121618',
+      },
+      boxShadow: {
+        primarycolor: '0 10px 90px -15px rgba(123, 228, 149, 0.9)',
       },
     },
   },

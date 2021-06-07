@@ -1,4 +1,5 @@
+import { sectionCode } from '@/types'
+
 export interface IProps {
-  className: string
-  code: string
+  data: sectionCode
 }
