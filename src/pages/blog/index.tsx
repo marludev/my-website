@@ -8,7 +8,7 @@ type IProps = { posts: post[] }
 const Blog: NextPage<IProps> = ({ posts }) => {
   return (
     <div className="container">
-      {posts ? (
+      {posts.length >= 1 ? (
         <RenderBlog posts={posts} />
       ) : (
         <div className="flex items-center justify-center h-96">
