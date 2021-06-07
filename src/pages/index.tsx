@@ -11,7 +11,7 @@ const Home: NextPage<IProps> = ({ posts }) => {
       <Banner />
       <div className="container">
         <CardsTechnologys />
-        <RenderBlog posts={posts} />
+        {posts && <RenderBlog posts={posts} />}
       </div>
     </>
   )
