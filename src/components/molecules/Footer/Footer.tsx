@@ -1,5 +1,5 @@
 import React from 'react'
-import { IoLogoInstagram, IoLogoTwitter } from 'react-icons/io'
+import { IoLogoLinkedin, IoLogoTwitter, IoLogoGithub } from 'react-icons/io'
 import NextLink from 'next/link'
 const Footer = () => {
   return (
@@ -15,26 +15,26 @@ const Footer = () => {
           <span>
             Diseñado por
             <a
-              href="https://www.instagram.com/christ_inventiva/"
+              href="https://www.instagram.com/christ_ui_/"
               className="ml-1 text-white hover:underline"
               rel="noopener noreferrer"
               target="_blank"
             >
-              @christ_inventiva
+              @christ_ui_
             </a>
           </span>
         </p>
         <span className="inline-flex justify-center mt-4 sm:ml-auto sm:mt-0 sm:justify-start">
           <a
-            href="https://www.instagram.com/marludev/"
+            href="https://www.linkedin.com/in/marludev/"
             target="_blank"
             rel="noopener noreferrer"
             className="ml-3 text-gray-400"
             title="instagram"
           >
-            <IoLogoInstagram
+            <IoLogoLinkedin
               size="30"
-              className="transition duration-300 hover:text-pink-500"
+              className="transition duration-300 hover:text-blue-600"
             />
           </a>
           <a
@@ -47,6 +47,18 @@ const Footer = () => {
             <IoLogoTwitter
               size="30"
               className="transition duration-300 hover:text-blue-400"
+            />
+          </a>
+          <a
+            href="https://github.com/marludev"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ml-3 text-gray-400"
+            title="twitter"
+          >
+            <IoLogoGithub
+              size="30"
+              className="transition duration-300 hover:text-gray-600"
             />
           </a>
         </span>
