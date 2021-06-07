@@ -11,6 +11,7 @@ const sectionComponents = {
 
 const Section: React.FC<IProps> = ({ sectionData }) => {
   const SectionComponent = sectionComponents[sectionData.__component]
+  // @ts-ignore //TODO: investigate this error
   return <SectionComponent data={sectionData} />
 }
 export { Section }
