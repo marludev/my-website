@@ -1,5 +1,5 @@
 import React from 'react'
-import { DefaultSeo } from 'next-seo'
+import { DefaultSeo, SocialProfileJsonLd } from 'next-seo'
 import { useRouter } from 'next/router'
 import { Header, Footer, ContactMe } from '@/components/molecules'
 import { IProps } from './types'
@@ -26,6 +26,15 @@ const Layout: React.FC<IProps> = ({ children }) => {
           site: '@marludev',
           cardType: 'summary_large_image',
         }}
+      />
+      <SocialProfileJsonLd
+        type="Person"
+        name="Luis Gabriel Martinez Pabon"
+        url="https://www.marludev.com"
+        sameAs={[
+          'https://www.linkedin.com/in/marludev',
+          'https://twitter.com/marludev',
+        ]}
       />
       <div className="min-h-screen text-gray-100 bg-custom-secondary">
         <Header />

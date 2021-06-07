@@ -10,18 +10,21 @@ const ToggleList: React.FC<IProps> = ({ question, response }) => {
   return (
     <div className="w-full my-6">
       <div className="pl-10">
-        <div
-          className="flex items-center cursor-pointer select-none"
+        <button
+          className="flex items-center cursor-pointer select-none focus:outline-none"
           onClick={() => setToggle(!toggle)}
+          aria-label="Open/Close question"
         >
-          <h4 className="w-full mt-2 mb-4 text-xl tracking-wide">{question}</h4>
+          <h4 className="w-full mt-2 mb-4 text-xl tracking-wide text-left">
+            {question}
+          </h4>
           <BsArrowUpShort
             size="50"
             className={`transform text-custom-primary transition-all duration-300 ml-auto ${
               !toggle && 'rotate-180'
             }`}
           />
-        </div>
+        </button>
         <div
           ref={containerToggle}
           className={`overflow-hidden transition-all duration-300`}
