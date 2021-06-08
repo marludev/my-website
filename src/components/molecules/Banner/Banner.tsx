@@ -25,7 +25,7 @@ const Banner: React.FC = () => {
           </div>
           <div className="flex flex-wrap items-center order-1 w-full my-4 lg:w-2/3 lg:order-2 lg:my-0 xl:w-1/2">
             <div className="text-left sm:text-center lg:text-left">
-              <h1 className="font-mono text-4xl font-extrabold tracking-tight text-gray-900 dark:text-gray-200 sm:text-5xl md:text-6xl">
+              <h1 className="font-mono text-4xl font-extrabold tracking-tight text-gray-200 sm:text-5xl md:text-6xl">
                 <span className="block xl:inline">Luis Martínez</span>{' '}
                 <span className="block text-custom-primary xl:inline">
                   frontend developer
