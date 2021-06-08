@@ -30,7 +30,7 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="ml-3 text-gray-400"
-            title="instagram"
+            title="linkedin"
           >
             <IoLogoLinkedin
               size="30"
@@ -54,7 +54,7 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="ml-3 text-gray-400"
-            title="twitter"
+            title="github"
           >
             <IoLogoGithub
               size="30"
