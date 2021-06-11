@@ -11,7 +11,7 @@ const ToggleList: React.FC<IProps> = ({ question, response }) => {
     <div className="w-full my-6">
       <div className="pl-10">
         <button
-          className="flex items-center cursor-pointer select-none focus:outline-none"
+          className="flex items-center w-full cursor-pointer select-none focus:outline-none"
           onClick={() => setToggle(!toggle)}
           aria-label="Open/Close question"
         >
