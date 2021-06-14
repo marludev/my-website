@@ -62,14 +62,16 @@ const Navbar = () => {
 
       <button
         type="button"
-        className="fixed z-50 rounded-full shadow-2xl w-14 h-14 bottom-10 right-10 bg-custom-primary focus:outline-none lg:hidden"
+        className={`fixed z-50 rounded-full shadow-2xl w-14 h-14 bottom-10 right-10 bg-custom-primary focus:outline-none lg:hidden transform transition-all duration-100 ${
+          toggle ? 'rotate-180' : '-rotate-180'
+        }`}
         aria-label="Open/Close Menu"
         onClick={() => setToggle(!toggle)}
       >
         {toggle ? (
-          <AiOutlineClose size="30" className="mx-auto" />
+          <AiOutlineClose size="30" className="mx-auto text-custom-secondary" />
         ) : (
-          <FaBars size="20" className="mx-auto" />
+          <FaBars size="20" className="mx-auto text-custom-secondary" />
         )}
       </button>
       {toggle && (
