@@ -1,6 +1,7 @@
-import * as React from 'react'
+import React from 'react'
 import { NavLink } from '@/components/atoms'
 import { FaBars } from 'react-icons/fa'
+import { document } from 'browser-monads-ts'
 import { AiOutlineClose } from 'react-icons/ai'
 import { useRouter } from 'next/router'
 import { routes } from '@/data'
@@ -12,6 +13,14 @@ const Navbar = () => {
   const path = router.pathname
   if (path === '/') isAbsolute = true
 
+  React.useMemo(() => {
+    if (toggle) {
+      document.body.classList.add('overflow-hidden')
+    } else {
+      document.body.classList.remove('overflow-hidden')
+    }
+  }, [toggle])
+
   return (
     <nav
       className={`z-50 overflow-hidden lg:p-8 ${
@@ -22,8 +31,8 @@ const Navbar = () => {
         {routes.map(route => (
           <li className="mx-4" key={route.url}>
             <NavLink
-              className="px-4 pb-2 text-lg transition duration-300 border-b-2 border-transparent hover:border-custom-primary"
-              activateClassName="border-b-2 border-custom-primary"
+              className="px-4 pb-2 text-lg transition duration-300 border-b-2 hover:border-custom-primary"
+              activateClassName="border-custom-primary"
               href={route.url}
             >
               {route.name}
@@ -32,22 +41,24 @@ const Navbar = () => {
         ))}
       </ul>
 
-      {toggle && (
-        <ul className="fixed inset-y-0 right-0 z-20 w-full max-w-xs p-6 sm:max-w-md bg-custom-secondary lg:hidden">
-          {routes.map(route => (
-            <li className="mx-4 my-8" key={route.url}>
-              <NavLink
-                className="pb-1 text-2xl transition duration-300 border-b-2 border-transparent hover:border-custom-primary"
-                activateClassName="border-b-2 border-custom-primary"
-                href={route.url}
-                onClick={() => setToggle(false)}
-              >
-                {route.name}
-              </NavLink>
-            </li>
-          ))}
-        </ul>
-      )}
+      <ul
+        className={`fixed inset-y-0 right-0 z-20 w-full max-w-xs p-6 sm:max-w-md bg-custom-secondary lg:hidden transform transition-all duration-300 ${
+          toggle ? 'translate-x-0' : 'translate-x-full'
+        }`}
+      >
+        {routes.map(route => (
+          <li className="mx-4 my-8" key={route.url}>
+            <NavLink
+              className="pb-1 text-2xl transition duration-300 border-b-2 hover:border-custom-primary focus:border-custom-primary"
+              activateClassName="border-custom-primary"
+              href={route.url}
+              onClick={() => setToggle(false)}
+            >
+              {route.name}
+            </NavLink>
+          </li>
+        ))}
+      </ul>
 
       <button
         type="button"
@@ -61,7 +72,6 @@ const Navbar = () => {
           <FaBars size="20" className="mx-auto" />
         )}
       </button>
-
       {toggle && (
         <div
           onClick={() => setToggle(false)}

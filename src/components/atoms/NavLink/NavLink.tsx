@@ -11,16 +11,11 @@ const NavLink: React.FC<Iprops> = ({
   children,
   onClick,
 }) => {
-  const router = useRouter()
-
+  const { pathname } = useRouter()
+  const activate = pathname === href ? activateClassName : 'border-transparent'
   return (
     <NextLink href={href}>
-      <a
-        onClick={onClick}
-        className={`${className} ${
-          router.pathname === href ? activateClassName : ''
-        }`}
-      >
+      <a onClick={onClick} className={`${className} ${activate}`}>
         {children}
       </a>
     </NextLink>
