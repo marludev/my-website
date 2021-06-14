@@ -1,7 +1,8 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-const ContactMe = () => {
+
+const CallToAction = () => {
   return (
     <div className="px-6 my-10 lg:px-0">
       <div className="flex flex-wrap h-full mx-auto overflow-hidden text-white bg-opacity-50 rounded-lg shadow-2xl xl:rounded-none xl:h-96">
@@ -16,16 +17,16 @@ const ContactMe = () => {
         </div>
         <div className="flex flex-wrap items-center w-full p-10 md:w-1/2 bg-custom-tertiary">
           <div className="max-w-xl">
-            <h2 className="mb-5 text-4xl font-bold">
+            <h2 className="mb-5 text-3xl font-bold sm:text-4xl">
               ¿Algún proyecto en mente?
             </h2>
-            <span className="inline-block w-2/5 h-1 mt-1 mb-3 bg-custom-primary rounded-lg" />
+            <span className="inline-block w-2/5 h-1 mt-1 mb-3 rounded-lg bg-custom-primary" />
             <p className="mb-4 text-lg text-gray-300">
               Ponte en contacto conmigo para materializar tus ideas, podremos
               hablar sobre tu proyecto y la viabilidad del mismo.
             </p>
             <Link href="/contacto">
-              <a className="block p-4 my-4 text-lg font-semibold text-black transition-all duration-300 shadow-xl rounded-lg sm:inline-block bg-opacity-90 bg-custom-primary hover:bg-opacity-100">
+              <a className="block p-4 my-4 text-base font-semibold text-black transition-all duration-300 rounded-lg shadow-xl sm:text-lg sm:inline-block bg-opacity-90 bg-custom-primary hover:bg-opacity-100">
                 ¡Estoy listo para comenzar!
               </a>
             </Link>
@@ -36,4 +37,4 @@ const ContactMe = () => {
   )
 }
 
-export { ContactMe }
+export { CallToAction }

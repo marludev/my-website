@@ -5,7 +5,9 @@ import { dataCardsTechnology } from '@/data'
 const CardsTechnologys = () => {
   return (
     <section className="py-16">
-      <Title title="Manejo diversas tecnologias" subTitle="tecnologias" />
+      <div className="px-6">
+        <Title title="Manejo diversas tecnologias" subTitle="tecnologias" />
+      </div>
       <div className="flex flex-wrap">
         {dataCardsTechnology.map(dataCard => (
           <CardTechnology key={dataCard.title} dataCard={dataCard} />
