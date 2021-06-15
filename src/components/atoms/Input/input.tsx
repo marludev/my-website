@@ -8,7 +8,6 @@ const Input: React.FC<IProps> = ({
   label,
   value,
   disabled = false,
-  error = false,
   type,
   name,
   autoComplete,
@@ -41,11 +40,7 @@ const Input: React.FC<IProps> = ({
         onBlur={handleBlur}
         value={value}
         disabled={disabled}
-        className={`w-full px-4 py-3 transition duration-300 bg-custom-input ring-2 focus:ring-2 hover:ring-2 focus:outline-none ${
-          error
-            ? 'focus:ring-red-500 ring-red-500 hover:ring-red-500'
-            : 'focus:ring-custom-primary hover:ring-custom-primary'
-        }`}
+        className="w-full px-4 py-3 transition duration-300 bg-custom-input ring-2 focus:ring-2 hover:ring-2 focus:outline-none focus:ring-custom-primary hover:ring-custom-primary"
       />
       <InputLabel name={name} active={active || !!value}>
         {label}

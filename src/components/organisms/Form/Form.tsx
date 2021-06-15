@@ -1,95 +1,73 @@
 import React from 'react'
-import { Formik } from 'formik'
-import * as Yup from 'yup'
 import { TextField } from '@/components/molecules'
 import { Title } from '@/components/atoms'
 import { BsArrowRightShort } from 'react-icons/bs'
+import kwesforms from 'kwesforms'
+
 const Form = () => {
-  const validationSchema = Yup.object().shape({
-    name: Yup.string()
-      .min(2, 'Nombre muy corto')
-      .max(50, 'Nombre muy largo')
-      .required('Campo obligatorio'),
-    message: Yup.string()
-      .min(5, 'Mensaje muy corto')
-      .max(256, 'Mensaje muy largo')
-      .required('Campo obligatorio'),
-    email: Yup.string().email('Correo invalido').required('Campo obligatorio'),
+  React.useEffect(() => {
+    kwesforms.init()
+  }, [])
+  const [dataForm, setDataForm] = React.useState({
+    name: '',
+    email: '',
+    message: '',
   })
+  const handleInput = (e: React.FormEvent<EventTarget>) => {
+    const target = e.target as HTMLInputElement
+    setDataForm(prev => ({
+      ...prev,
+      [target.name]: target.value,
+    }))
+  }
   return (
     <section className="p-6 py-16 lg:p-0">
       <Title title="Contactame" />
-      <Formik
-        initialValues={{ name: '', email: '', message: '' }}
-        validationSchema={validationSchema}
-        onSubmit={(values, { setSubmitting }) => {
-          setTimeout(() => {
-            setSubmitting(false)
-            // TODO delete log
-            console.log(values)
-          }, 3000)
-        }}
+      <form
+        lang="es"
+        action="https://kwes.io/api/foreign/forms/OBBBkO7gzjrcximOaAYR"
+        className="flex flex-wrap max-w-6xl mx-auto kwes-form"
       >
-        {({
-          values,
-          errors,
-          touched,
-          handleChange,
-          handleBlur,
-          handleSubmit,
-          isSubmitting,
-          /* and other goodies */
-        }) => (
-          <form
-            className="flex flex-wrap max-w-6xl mx-auto"
-            onSubmit={handleSubmit}
+        <TextField
+          name="name"
+          onChange={handleInput}
+          type="text"
+          value={dataForm.name}
+          label="Nombre"
+          className="w-full py-4 lg:px-4 lg:pl-0 lg:w-1/2"
+          autoComplete="name"
+          required
+        />
+        <TextField
+          name="email"
+          onChange={handleInput}
+          type="email"
+          value={dataForm.email}
+          label="Correo"
+          className="w-full py-4 lg:px-4 lg:pr-0 lg:w-1/2"
+          autoComplete="email"
+          required
+        />
+        <TextField
+          name="message"
+          onChange={handleInput}
+          value={dataForm.message}
+          label="Mensaje"
+          className="w-full py-4 lg:px-0"
+          required
+        />
+        <div className="flex justify-end w-full">
+          <button
+            className="block p-4 my-4 text-lg font-semibold text-black transition-all duration-300 rounded-lg shadow-xl sm:inline-block bg-opacity-90 bg-custom-primary hover:bg-opacity-100"
+            type="submit"
           >
-            <TextField
-              name="name"
-              onBlur={handleBlur}
-              onChange={handleChange}
-              type="text"
-              value={values.name}
-              label="Nombre"
-              error={errors.name && touched.name && errors.name}
-              className="w-full py-4 lg:px-4 lg:pl-0 lg:w-1/2"
-              autoComplete="name"
-            />
-            <TextField
-              name="email"
-              onBlur={handleBlur}
-              onChange={handleChange}
-              type="email"
-              value={values.email}
-              label="Correo"
-              error={errors.email && touched.email && errors.email}
-              className="w-full py-4 lg:px-4 lg:pr-0 lg:w-1/2"
-              autoComplete="email"
-            />
-            <TextField
-              name="message"
-              onBlur={handleBlur}
-              onChange={handleChange}
-              value={values.message}
-              label="Mensaje"
-              error={errors.message && touched.message && errors.message}
-              className="w-full py-4 lg:px-0"
-            />
-            <div className="flex justify-end w-full">
-              <button
-                className="block p-4 my-4 text-lg font-semibold text-black transition-all duration-300 rounded-lg shadow-xl sm:inline-block bg-opacity-90 bg-custom-primary hover:bg-opacity-100"
-                type="submit"
-                disabled={isSubmitting}
-              >
-                <span className="flex">
-                  Enviar
-                  <BsArrowRightShort size="30" className="text-black" />
-                </span>
-              </button>
-            </div>
-          </form>
-        )}
-      </Formik>
+            <span className="flex">
+              Enviar
+              <BsArrowRightShort size="30" className="text-black" />
+            </span>
+          </button>
+        </div>
+      </form>
     </section>
   )
 }
