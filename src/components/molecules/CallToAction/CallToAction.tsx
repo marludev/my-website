@@ -1,18 +1,19 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-
+import image from '/public/image.jpg'
 const CallToAction = () => {
   return (
     <div className="px-6 my-10 lg:px-0">
       <div className="flex flex-wrap h-full mx-auto overflow-hidden text-white bg-opacity-50 rounded-lg shadow-2xl xl:rounded-none xl:h-96">
         <div className="relative hidden md:w-1/2 md:block">
           <Image
-            src="/image.jpg"
+            src={image}
             objectFit="cover"
             objectPosition="top"
             layout="fill"
             alt="image contact"
+            placeholder="blur"
           />
         </div>
         <div className="flex flex-wrap items-center w-full p-10 md:w-1/2 bg-custom-tertiary">
