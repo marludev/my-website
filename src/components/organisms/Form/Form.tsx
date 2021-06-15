@@ -26,6 +26,7 @@ const Form = () => {
       <form
         lang="es"
         action="https://kwes.io/api/foreign/forms/OBBBkO7gzjrcximOaAYR"
+        method="POST"
         className="flex flex-wrap max-w-6xl mx-auto kwes-form"
       >
         <TextField
@@ -36,7 +37,6 @@ const Form = () => {
           label="Nombre"
           className="w-full py-4 lg:px-4 lg:pl-0 lg:w-1/2"
           autoComplete="name"
-          required
         />
         <TextField
           name="email"
@@ -46,7 +46,6 @@ const Form = () => {
           label="Correo"
           className="w-full py-4 lg:px-4 lg:pr-0 lg:w-1/2"
           autoComplete="email"
-          required
         />
         <TextField
           name="message"
@@ -54,7 +53,6 @@ const Form = () => {
           value={dataForm.message}
           label="Mensaje"
           className="w-full py-4 lg:px-0"
-          required
         />
         <div className="flex justify-end w-full">
           <button

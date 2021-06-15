@@ -29,6 +29,7 @@ const Textarea: React.FC<IProps> = ({
   return (
     <div className="relative">
       <textarea
+        required
         id={name}
         name={name}
         onChange={onChange}
