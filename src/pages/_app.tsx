@@ -18,6 +18,10 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (
     <Layout>
       <Component {...pageProps} />
+      <Script
+        src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+        strategy="afterInteractive"
+      />
       <Script strategy="afterInteractive">
         {`
           window.dataLayer = window.dataLayer || [];
