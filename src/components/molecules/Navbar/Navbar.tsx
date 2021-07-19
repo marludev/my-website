@@ -49,7 +49,7 @@ const Navbar = () => {
         {routes.map(route => (
           <li className="mx-4 my-8" key={route.url}>
             <NavLink
-              className="pb-1 text-2xl transition duration-300 border-b-2 hover:border-custom-primary focus:border-custom-primary"
+              className="block pb-1 text-2xl transition duration-300 border-b-2 hover:border-custom-primary focus:border-custom-primary"
               activateClassName="border-custom-primary"
               href={route.url}
               onClick={() => setToggle(false)}
