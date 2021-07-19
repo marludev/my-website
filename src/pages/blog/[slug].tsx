@@ -8,7 +8,7 @@ import { Section } from '@/components/molecules'
 type IProps = { post: post }
 const PostPage: NextPage<IProps> = ({ post }) => {
   return (
-    <>
+    <article>
       <div className="mx-auto max-w-7xl">
         <h1 className="text-5xl">{post.title}</h1>
         <figure className="relative w-full h-96">
@@ -26,7 +26,7 @@ const PostPage: NextPage<IProps> = ({ post }) => {
           <Section sectionData={section} key={section.id} />
         ))}
       </div>
-    </>
+    </article>
   )
 }
 export default PostPage

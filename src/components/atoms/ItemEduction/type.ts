@@ -1,4 +1,4 @@
 export interface IProps {
-  courseImg: string
-  courseName: string
+  image: string
+  name: string
 }

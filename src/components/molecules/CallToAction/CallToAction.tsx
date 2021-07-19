@@ -6,7 +6,7 @@ const CallToAction = () => {
   return (
     <div className="px-6 my-10 lg:px-0">
       <div className="flex flex-wrap h-full mx-auto overflow-hidden text-white bg-opacity-50 rounded-lg shadow-2xl xl:rounded-none xl:h-96">
-        <div className="relative hidden md:w-1/2 md:block">
+        <figure className="relative hidden md:w-1/2 md:block">
           <Image
             src={image}
             objectFit="cover"
@@ -15,7 +15,7 @@ const CallToAction = () => {
             alt="image contact"
             placeholder="blur"
           />
-        </div>
+        </figure>
         <div className="flex flex-wrap items-center w-full p-10 md:w-1/2 bg-custom-tertiary">
           <div className="max-w-xl">
             <h2 className="mb-5 text-3xl font-bold sm:text-4xl">

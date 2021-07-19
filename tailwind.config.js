@@ -25,6 +25,13 @@ module.exports = {
       boxShadow: {
         primarycolor: '0 10px 90px -15px rgba(123, 228, 149, 0.9)',
       },
+      typography: {
+        DEFAULT: {
+          css: {
+            color: 'unset',
+          },
+        },
+      },
     },
   },
   variants: {
@@ -33,5 +40,5 @@ module.exports = {
       ringWidth: ['hover', 'active'],
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/typography')],
 }
