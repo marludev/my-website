@@ -41,7 +41,6 @@ const Input: React.FC<IProps> = ({
         value={value}
         disabled={disabled}
         className="w-full px-4 py-3 transition duration-300 bg-custom-input ring-2 focus:ring-2 hover:ring-2 focus:outline-none focus:ring-custom-primary hover:ring-custom-primary"
-        required
       />
       <InputLabel name={name} active={active || !!value}>
         {label}

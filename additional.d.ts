@@ -5,4 +5,3 @@ declare module 'browser-monads-ts' {
     gtag?: Gtag.Gtag
   }
 }
-declare module 'kwesforms'

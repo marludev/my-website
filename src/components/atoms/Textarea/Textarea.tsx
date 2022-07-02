@@ -9,6 +9,7 @@ const Textarea: React.FC<IProps> = ({
   value,
   disabled = false,
   name,
+  rows,
 }) => {
   const [active, setActive] = React.useState(false)
 
@@ -38,6 +39,7 @@ const Textarea: React.FC<IProps> = ({
         value={value}
         disabled={disabled}
         className="w-full px-4 py-3 transition duration-300 resize-none bg-custom-input ring-2 focus:ring-2 hover:ring-2 focus:outline-none h-36 focus:ring-custom-primary hover:ring-custom-primary"
+        rows={rows}
       />
 
       <InputLabel name={name} active={active || !!value}>

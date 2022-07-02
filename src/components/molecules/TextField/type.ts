@@ -7,4 +7,5 @@ export interface IProps extends React.InputHTMLAttributes<HTMLInputElement> {
   contentRight?: React.ReactNode
   value?: string | number
   name: string
+  rows?: number
 }
