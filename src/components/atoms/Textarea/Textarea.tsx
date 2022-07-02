@@ -14,14 +14,14 @@ const Textarea: React.FC<IProps> = ({
   const [active, setActive] = React.useState(false)
 
   const handleFocus = React.useCallback(
-    e => {
+    (e: React.FocusEvent<any, Element>) => {
       setActive(true)
       if (onFocus) onFocus(e)
     },
     [setActive, onFocus]
   )
   const handleBlur = React.useCallback(
-    e => {
+    (e: React.FocusEvent<any, Element>) => {
       setActive(false)
       if (onBlur) onBlur(e)
     },
@@ -30,7 +30,6 @@ const Textarea: React.FC<IProps> = ({
   return (
     <div className="relative">
       <textarea
-        required
         id={name}
         name={name}
         onChange={onChange}
