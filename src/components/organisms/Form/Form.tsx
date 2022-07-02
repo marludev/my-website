@@ -7,15 +7,19 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 
 const schema = z.object({
-  name: z.string(),
-  subject: z.string(),
-  message: z.string(),
+  name: z.string().min(3, 'The name field is too short'),
+  subject: z.string().min(5, 'The subject field is too short'),
+  message: z.string().min(10, 'The message field is too short'),
 })
 
 type Inputs = z.infer<typeof schema>
 
 const Form = () => {
-  const { control, handleSubmit } = useForm({
+  const {
+    control,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
     resolver: zodResolver(schema),
     defaultValues: {
       name: '',
@@ -35,42 +39,53 @@ const Form = () => {
         onSubmit={handleSubmit(onSubmit)}
         className="flex flex-wrap max-w-6xl mx-auto kwes-form"
       >
-        <Controller
-          name="name"
-          control={control}
-          render={({ field }) => (
-            <TextField
-              {...field}
-              label="Nombre"
-              className="w-full py-4 lg:px-4 lg:pl-0 lg:w-1/2"
-            />
+        <div className="w-full py-4 lg:px-4 lg:pl-0 lg:w-1/2">
+          <Controller
+            name="name"
+            control={control}
+            render={({ field }) => (
+              <TextField {...field} label="Nombre" className="w-full " />
+            )}
+          />
+          {errors.name && (
+            <p className="mt-3 text-sm font-semibold text-red-400">
+              {errors.name.message}
+            </p>
           )}
-        />
-
-        <Controller
-          name="subject"
-          control={control}
-          render={({ field }) => (
-            <TextField
-              {...field}
-              label="Asunto"
-              className="w-full py-4 lg:px-4 lg:pr-0 lg:w-1/2"
-            />
+        </div>
+        <div className="w-full py-4 lg:px-4 lg:pl-0 lg:w-1/2">
+          <Controller
+            name="subject"
+            control={control}
+            render={({ field }) => (
+              <TextField {...field} label="Asunto" className="w-full" />
+            )}
+          />
+          {errors.subject && (
+            <p className="mt-3 text-sm font-semibold text-red-400">
+              {errors.subject.message}
+            </p>
           )}
-        />
-
-        <Controller
-          name="message"
-          control={control}
-          render={({ field }) => (
-            <TextField
-              {...field}
-              label="Mensaje"
-              className="w-full py-4 lg:px-0"
-              rows={3}
-            />
+        </div>
+        <div className="w-full py-4 lg:px-0">
+          <Controller
+            name="message"
+            control={control}
+            render={({ field }) => (
+              <TextField
+                {...field}
+                label="Mensaje"
+                className="w-full"
+                rows={3}
+              />
+            )}
+          />
+          {errors.message && (
+            <p className="mt-3 text-sm font-semibold text-red-400">
+              {errors.message.message}
+            </p>
           )}
-        />
+        </div>
 
         <div className="flex justify-end w-full">
           <button
