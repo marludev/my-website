@@ -3,4 +3,5 @@ export interface Iprops {
   activateClassName?: string
   className?: string
   onClick?: () => void
+  children?: React.ReactNode
 }
