@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "postbuild": "next-sitemap"
+    
   },
   "dependencies": {
     "@hookform/resolvers": "^2.9.3",
