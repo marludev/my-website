@@ -40,7 +40,7 @@ const Input: React.FC<IProps> = ({
         onBlur={handleBlur}
         value={value}
         disabled={disabled}
-        className="w-full p-3 transition duration-300 bg-transparent rounded-lg ring-2 focus:ring-2 hover:ring-2 focus:outline-none focus:ring-custom-primary hover:ring-custom-primary"
+        className="w-full p-3 transition duration-300 bg-transparent rounded-lg ring-2 focus:ring-2 focus:outline-none focus:ring-custom-primary hover:ring-custom-primary ring-custom-input"
       />
       <InputLabel name={name} active={active || !!value}>
         {label}

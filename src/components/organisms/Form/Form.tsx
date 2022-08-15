@@ -40,9 +40,9 @@ const Form = () => {
       />
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="flex flex-wrap max-w-2xl p-6 mx-auto rounded-lg bg-custom-tertiary"
+        className="flex flex-wrap max-w-2xl p-6 mx-auto rounded-lg "
       >
-        <div className="w-full py-4 lg:px-4 lg:pl-0 ">
+        <div className="w-full py-4 ">
           <Controller
             name="name"
             control={control}
@@ -56,7 +56,7 @@ const Form = () => {
             </p>
           )}
         </div>
-        <div className="w-full py-4 lg:px-4 lg:pl-0 ">
+        <div className="w-full py-4 ">
           <Controller
             name="subject"
             control={control}

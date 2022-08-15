@@ -37,7 +37,7 @@ const Textarea: React.FC<IProps> = ({
         onBlur={handleBlur}
         value={value}
         disabled={disabled}
-        className="w-full h-40 p-3 transition duration-300 bg-transparent rounded-lg resize-none ring-2 focus:ring-2 hover:ring-2 focus:outline-none focus:ring-custom-primary hover:ring-custom-primary"
+        className="w-full h-40 p-3 transition duration-300 bg-transparent rounded-lg resize-none ring-2 focus:ring-2 hover:ring-2 focus:outline-none focus:ring-custom-primary ring-custom-input hover:ring-custom-primary"
         rows={rows}
       />
 
