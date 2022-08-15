@@ -9,7 +9,7 @@ import me from '/public/me.png'
 const Banner: React.FC = () => {
   return (
     <div className="relative flex items-center py-10 lg:py-40">
-      <figure className="absolute top-0 left-0 w-full h-full">
+      <figure className="absolute inset-x-0 top-0 w-full h-full">
         <Image
           src={banner}
           objectFit="cover"

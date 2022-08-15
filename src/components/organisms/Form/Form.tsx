@@ -7,9 +7,9 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 
 const schema = z.object({
-  name: z.string().min(3, 'The name field is too short'),
-  subject: z.string().min(5, 'The subject field is too short'),
-  message: z.string().min(10, 'The message field is too short'),
+  name: z.string().min(3, 'El nombre debe tener al menos 3 caracteres'),
+  subject: z.string().min(5, 'El asunto debe tener al menos 5 caracteres'),
+  message: z.string().min(10, 'El mensaje debe tener al menos 10 caracteres'),
 })
 
 type Inputs = z.infer<typeof schema>
@@ -33,13 +33,16 @@ const Form = () => {
   }
 
   return (
-    <section className="p-6 py-16 lg:p-0">
-      <Title title="Contactame" />
+    <section className="p-6 py-16 my-16 lg:p-0">
+      <Title
+        title="¡Hablemos!"
+        subTitle="Si estás interesado en mi trabajo o tienes alguna inquietud, no dudes en escribirme!"
+      />
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="flex flex-wrap max-w-6xl mx-auto kwes-form"
+        className="flex flex-wrap max-w-2xl p-6 mx-auto rounded-lg bg-custom-tertiary"
       >
-        <div className="w-full py-4 lg:px-4 lg:pl-0 lg:w-1/2">
+        <div className="w-full py-4 lg:px-4 lg:pl-0 ">
           <Controller
             name="name"
             control={control}
@@ -53,7 +56,7 @@ const Form = () => {
             </p>
           )}
         </div>
-        <div className="w-full py-4 lg:px-4 lg:pl-0 lg:w-1/2">
+        <div className="w-full py-4 lg:px-4 lg:pl-0 ">
           <Controller
             name="subject"
             control={control}

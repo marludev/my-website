@@ -2,7 +2,7 @@ import React from 'react'
 import { CardTechnology, Title } from '@/components/atoms'
 import { dataCardsTechnology } from '@/data'
 
-const CardsTechnologys = () => {
+const CardsTechnologies = () => {
   return (
     <section className="py-16">
       <div className="px-6">
@@ -17,4 +17,4 @@ const CardsTechnologys = () => {
   )
 }
 
-export { CardsTechnologys }
+export { CardsTechnologies }

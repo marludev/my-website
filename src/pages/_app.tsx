@@ -16,15 +16,16 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
     }
   }, [router.events])
   return (
-    <Layout>
-      <>
+    <>
+      <Layout>
         <Component {...pageProps} />
-        <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
-          strategy="afterInteractive"
-        />
-        <Script strategy="afterInteractive" id="gtag">
-          {`
+      </Layout>
+      <Script
+        src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+        strategy="afterInteractive"
+      />
+      <Script strategy="afterInteractive" id="gtag">
+        {`
           window.dataLayer = window.dataLayer || [];
           function gtag() {
             dataLayer.push(arguments);
@@ -35,9 +36,8 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
           gtag('js', new Date());
           gtag('config', '${GA_MEASUREMENT_ID}');
           `}
-        </Script>
-      </>
-    </Layout>
+      </Script>
+    </>
   )
 }
 

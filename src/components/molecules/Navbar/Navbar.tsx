@@ -3,31 +3,25 @@ import { NavLink } from '@/components/atoms'
 import { FaBars } from 'react-icons/fa'
 import { document } from 'browser-monads-ts'
 import { AiOutlineClose } from 'react-icons/ai'
-import { useRouter } from 'next/router'
 import { routes } from '@/data'
 
 const Navbar = () => {
-  const [toggle, setToggle] = React.useState(false)
-  const router = useRouter()
-  let isAbsolute = null
-  const path = router.pathname
-  if (path === '/') isAbsolute = true
+  const [open, setOpen] = React.useState(false)
 
   React.useMemo(() => {
-    if (toggle) {
+    if (open) {
       document.body.classList.add('overflow-hidden')
     } else {
       document.body.classList.remove('overflow-hidden')
     }
-  }, [toggle])
+    return () => {
+      document.body.classList.remove('overflow-hidden')
+    }
+  }, [open])
 
   return (
-    <nav
-      className={`z-50 overflow-hidden lg:p-8 ${
-        isAbsolute ? 'absolute inset-x-0' : 'relative'
-      }`}
-    >
-      <ul className="container flex-row justify-end hidden lg:flex">
+    <nav className="overflow-hidden lg:p-8 bg-custom-secondary/80 lg:backdrop-blur-md">
+      <ul className="container flex-row justify-end hidden lg:flex ">
         {routes.map(route => (
           <li className="mx-4" key={route.url}>
             <NavLink
@@ -42,8 +36,8 @@ const Navbar = () => {
       </ul>
 
       <ul
-        className={`fixed inset-y-0 right-0 z-20 w-full max-w-xs p-6 sm:max-w-md bg-custom-secondary lg:hidden transform transition-all duration-300 ${
-          toggle ? 'translate-x-0' : 'translate-x-full'
+        className={`fixed inset-y-0 right-0 z-20 w-full max-w-xs p-6 sm:max-w-md backdrop-blur-md	bg-custom-secondary/80  lg:hidden transform transition-all duration-300 ${
+          open ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
         {routes.map(route => (
@@ -52,31 +46,31 @@ const Navbar = () => {
               className="block pb-1 text-2xl transition duration-300 border-b-2 hover:border-custom-primary focus:border-custom-primary"
               activateClassName="border-custom-primary"
               href={route.url}
-              onClick={() => setToggle(false)}
+              onClick={() => setOpen(!open)}
             >
               {route.name}
             </NavLink>
           </li>
         ))}
       </ul>
-
       <button
         type="button"
-        className={`fixed z-50 rounded-full shadow-2xl w-14 h-14 bottom-10 right-10 bg-custom-primary focus:outline-none lg:hidden transform transition-all duration-100 ${
-          toggle ? 'rotate-180' : '-rotate-180'
+        className={`fixed z-50 rounded-full shadow-2xl w-14 h-14 bottom-10 right-10 bg-custom-primary focus:outline-none lg:hidden transform transition-all duration-500 ${
+          open ? 'rotate-180' : '-rotate-180'
         }`}
         aria-label="Open/Close Menu"
-        onClick={() => setToggle(!toggle)}
+        onClick={() => setOpen(!open)}
       >
-        {toggle ? (
+        {open ? (
           <AiOutlineClose size="30" className="mx-auto text-custom-secondary" />
         ) : (
           <FaBars size="20" className="mx-auto text-custom-secondary" />
         )}
       </button>
-      {toggle && (
+
+      {open && (
         <div
-          onClick={() => setToggle(false)}
+          onClick={() => setOpen(false)}
           className="fixed inset-0 z-10 bg-black opacity-25"
         />
       )}
