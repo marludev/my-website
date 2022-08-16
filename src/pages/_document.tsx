@@ -11,7 +11,7 @@ class MyDocument extends Document {
           />
           <meta charSet="utf-8" />
         </Head>
-        <body>
+        <body className="text-gray-100  bg-custom-secondary">
           <Main />
           <NextScript />
         </body>

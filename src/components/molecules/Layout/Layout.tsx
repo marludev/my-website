@@ -49,7 +49,7 @@ const Layout: React.FC<IProps> = ({ children }) => {
           'https://twitter.com/marludev',
         ]}
       />
-      <div className="min-h-screen text-gray-100 bg-custom-secondary">
+      <div className="min-h-screen">
         <Header />
         <main>
           {children}
