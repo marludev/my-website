@@ -1,8 +1,8 @@
-import React from 'react'
-import { BsArrowReturnRight } from 'react-icons/bs'
-import Image from 'next/image'
 import { NavLink } from '@/components/atoms'
 import { summaryAboutMe } from '@/data'
+import Image from 'next/image'
+import React from 'react'
+import { BsArrowReturnRight } from 'react-icons/bs'
 import banner from '/public/header.jpg'
 import me from '/public/me.png'
 
@@ -14,7 +14,7 @@ const Banner: React.FC = () => {
           src={banner}
           objectFit="cover"
           layout="fill"
-          objectPosition="top"
+          objectPosition="center"
           className="z-0"
           alt="principal image"
           placeholder="blur"
@@ -30,6 +30,7 @@ const Banner: React.FC = () => {
               src={me}
               alt="photo author"
               placeholder="blur"
+              className="object-cover rounded-full"
             />
           </figure>
           <div className="flex flex-wrap items-center order-1 w-full my-4 lg:w-2/3 lg:order-2 lg:my-0 xl:w-1/2">

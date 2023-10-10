@@ -1,9 +1,8 @@
-import React from 'react'
-import Markdown from 'react-markdown'
-import Image from 'next/image'
 import { Title } from '@/components/atoms'
 import { aboutMe } from '@/data'
-import me from '/public/profile.png'
+import Image from 'next/image'
+import Markdown from 'react-markdown'
+import me from '/public/me.png'
 
 const AboutMe = () => {
   return (
@@ -21,7 +20,12 @@ const AboutMe = () => {
         <div className="col-span-1 row-span-2 rounded-lg p-7 bg-custom-primary" />
         <div className="col-span-3 row-span-2 rounded-lg p-7 bg-custom-tertiary" />
         <figure className="absolute inset-0 flex items-center justify-center">
-          <Image src={me} alt="photo author" placeholder="blur" />
+          <Image
+            src={me}
+            alt="photo author"
+            placeholder="blur"
+            className="shadow-xl border-10"
+          />
         </figure>
       </div>
       <div className="w-full mt-auto text-white xl:w-6/12 lg:p-5">
