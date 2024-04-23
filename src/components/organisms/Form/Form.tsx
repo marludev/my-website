@@ -28,7 +28,7 @@ const Form = () => {
     },
   })
   const onSubmit: SubmitHandler<Inputs> = data => {
-    const email = 'luisgmp1997@gmail.com'
+    const email = 'me@marludev.com'
     document.location = `mailto:${email}?subject=${data.subject}&body=${data.message}`
   }
 
