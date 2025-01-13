@@ -2,6 +2,7 @@ import { NavLink } from '@/components/atoms'
 import { routes } from '@/data'
 import { document } from 'browser-monads-ts'
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 import { AiOutlineClose } from 'react-icons/ai'
 import { FaBars } from 'react-icons/fa'
@@ -24,9 +25,13 @@ const Navbar = () => {
   return (
     <nav className="py-4 overflow-hidden bg-custom-secondary/90 lg:backdrop-blur-md">
       <ul className="container flex items-center justify-between">
-        <figure className="w-56 px-6 lg:w-40 lg:p-0">
-          <Image src={noPaddingComplete} objectFit="contain" alt="Logo" />
-        </figure>
+        <Link href="/">
+          <a>
+            <figure className="flex items-center justify-center w-56 px-6lg:w-40 lg:p-0">
+              <Image src={noPaddingComplete} objectFit="contain" alt="Logo" />
+            </figure>
+          </a>
+        </Link>
         <div className="flex-row justify-end hidden lg:flex">
           {routes.map(route => (
             <li className="mx-4" key={route.url}>
