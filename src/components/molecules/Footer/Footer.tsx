@@ -1,13 +1,19 @@
-import React from 'react'
-import { IoLogoLinkedin, IoLogoTwitter, IoLogoGithub } from 'react-icons/io'
+import Image from 'next/image'
 import NextLink from 'next/link'
+import { IoLogoGithub, IoLogoLinkedin, IoLogoTwitter } from 'react-icons/io'
+import noPaddingComplete from '/public/noPaddingComplete.png'
+
 const Footer = () => {
   return (
     <footer className="text-gray-600 body-font">
       <div className="container flex flex-col items-center px-5 py-8 mx-auto sm:flex-row">
         <NextLink href="/">
           <a className="flex items-center justify-center font-medium text-gray-900 title-font md:justify-start">
-            <span className="ml-3 text-xl text-gray-200">Marludev</span>
+            <span className="ml-3 text-xl text-gray-200">
+              <figure className="w-40">
+                <Image src={noPaddingComplete} objectFit="contain" alt="Logo" />
+              </figure>
+            </span>
           </a>
         </NextLink>
         <p className="flex flex-col mt-4 text-gray-400 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-custom-primary sm:py-2 sm:mt-0">

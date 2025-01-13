@@ -1,9 +1,11 @@
-import React from 'react'
 import { NavLink } from '@/components/atoms'
-import { FaBars } from 'react-icons/fa'
-import { document } from 'browser-monads-ts'
-import { AiOutlineClose } from 'react-icons/ai'
 import { routes } from '@/data'
+import { document } from 'browser-monads-ts'
+import Image from 'next/image'
+import React from 'react'
+import { AiOutlineClose } from 'react-icons/ai'
+import { FaBars } from 'react-icons/fa'
+import noPaddingComplete from '/public/noPaddingComplete.png'
 
 const Navbar = () => {
   const [open, setOpen] = React.useState(false)
@@ -20,23 +22,28 @@ const Navbar = () => {
   }, [open])
 
   return (
-    <nav className="overflow-hidden lg:p-8 bg-custom-secondary/80 lg:backdrop-blur-md">
-      <ul className="container flex-row justify-end hidden lg:flex ">
-        {routes.map(route => (
-          <li className="mx-4" key={route.url}>
-            <NavLink
-              className="px-4 pb-2 text-lg transition duration-300 border-b-2 hover:border-custom-primary"
-              activateClassName="border-custom-primary"
-              href={route.url}
-            >
-              {route.name}
-            </NavLink>
-          </li>
-        ))}
+    <nav className="py-4 overflow-hidden bg-custom-secondary/90 lg:backdrop-blur-md">
+      <ul className="container flex items-center justify-between">
+        <figure className="w-56 px-6 lg:w-40 lg:p-0">
+          <Image src={noPaddingComplete} objectFit="contain" alt="Logo" />
+        </figure>
+        <div className="flex-row justify-end hidden lg:flex">
+          {routes.map(route => (
+            <li className="mx-4" key={route.url}>
+              <NavLink
+                className="px-4 pb-2 text-lg transition duration-300 border-b-2 hover:border-custom-primary"
+                activateClassName="border-custom-primary"
+                href={route.url}
+              >
+                {route.name}
+              </NavLink>
+            </li>
+          ))}
+        </div>
       </ul>
 
       <ul
-        className={`fixed inset-y-0 right-0 z-20 w-full max-w-xs p-6 sm:max-w-md backdrop-blur-md	bg-custom-secondary/80  lg:hidden transform transition-all duration-300 ${
+        className={`fixed inset-y-0 right-0 z-20 w-full max-w-xs p-6 sm:max-w-md backdrop-blur-md	bg-custom-secondary/90  lg:hidden transform transition-all duration-300 ${
           open ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
