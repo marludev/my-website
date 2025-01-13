@@ -26,8 +26,8 @@ const Navbar = () => {
     <nav className="py-4 overflow-hidden bg-custom-secondary/90 lg:backdrop-blur-md">
       <ul className="container flex items-center justify-between">
         <Link href="/">
-          <a>
-            <figure className="flex items-center justify-center w-56 px-6lg:w-40 lg:p-0">
+          <a className="px-6 lg:p-0">
+            <figure className="flex items-center justify-center w-32 lg:w-56">
               <Image src={noPaddingComplete} objectFit="contain" alt="Logo" />
             </figure>
           </a>
