@@ -1,10 +1,10 @@
-import React from 'react'
+import { CallToAction, Footer, Header } from '@/components/molecules'
+import { baseURL } from '@/data'
 import { DefaultSeo, SocialProfileJsonLd } from 'next-seo'
 import { useRouter } from 'next/router'
+import React from 'react'
 import CookieConsent from 'react-cookie-consent'
-import { Header, Footer, CallToAction } from '@/components/molecules'
 import { IProps } from './types'
-import { baseURL } from '@/data'
 
 const Layout: React.FC<IProps> = ({ children }) => {
   const router = useRouter()
